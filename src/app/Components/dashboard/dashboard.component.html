@@ -1,0 +1,35 @@
+
+<button class="btn btn-success" (click)="Add()">
+   Add New Patient
+</button>
+
+<table class="table ">
+
+<thead>
+  <th>Patient Name</th>
+  <th>Patient Email</th>
+  <th>Add Appointment</th>
+  <th>Delete</th>
+  <th>Edit</th>
+
+</thead>
+
+<tbody>
+
+  <tr *ngFor="let patient of Patients">
+    <td>{{patient.name}}</td>
+    <td>{{patient.email}}</td>
+    <td>
+      <button class="btn btn-success" (click)="Addappointment(patient.id)">Add Appointment</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="Delete(patient.id)">Delete</button>
+    </td>
+    <td>
+      <button class="btn btn-primary" (click)="Edit(patient.id)">Edit</button>
+    </td>
+  </tr>
+
+</tbody>
+
+</table>

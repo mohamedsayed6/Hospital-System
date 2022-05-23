@@ -10,6 +10,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { RegisterationComponent } from './Components/registeration/registeration.component';
 import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { AddappointmentComponent } from './Components/addappointment/addappointment.component';
+import { PatientComponent } from './Components/patient/patient.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     RegisterationComponent,
     LoginComponent,
+    DashboardComponent,
+    AddappointmentComponent,
+    PatientComponent,
 
   ],
   imports: [

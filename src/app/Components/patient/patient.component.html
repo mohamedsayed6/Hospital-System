@@ -1,0 +1,24 @@
+<div>
+  Your Appointments
+</div>
+
+<div class="col-3 ms-5">
+<table class="table">
+
+  <thead>
+    <th>Date</th>
+    <th>Delete</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let app of User?.appointments">
+      <td>{{app}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="Delete(app)"> Delete </button> </td>
+
+    </tr>
+  </tbody>
+
+</table>
+
+</div>

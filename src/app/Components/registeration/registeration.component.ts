@@ -66,6 +66,7 @@ Users:IUser[]=[]
    }
    else
    {
+    this.User.id=100
      this.Users.push(this.User)
      localStorage.setItem("Patients",JSON.stringify(this.Users))
    }
