@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
            if(this.Users.find(u=>u.password==user.password))
            {
             this.router.navigateByUrl(`/Patient/${this.Users.find(u=>u.email==user.email)?.id}`)
+            localStorage.setItem("isLogged","logged");
            }
            else
            {

@@ -40,7 +40,6 @@ export class AddappointmentComponent implements OnInit {
 
     this.Users=JSON.parse(localStorage.getItem("Patients")!);
     this.Users.find(u=>u.id==Number(`${this.patientID}`))?.appointments.push(this.today);
-    console.log(this.today)
     localStorage.setItem("Patients",JSON.stringify(this.Users));
 
   }

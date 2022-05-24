@@ -13,7 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { AddappointmentComponent } from './Components/addappointment/addappointment.component';
 import { PatientComponent } from './Components/patient/patient.component';
+import { EditComponent } from './Components/edit/edit.component';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +30,7 @@ import { PatientComponent } from './Components/patient/patient.component';
     DashboardComponent,
     AddappointmentComponent,
     PatientComponent,
+    EditComponent,
 
   ],
   imports: [
@@ -33,7 +41,16 @@ import { PatientComponent } from './Components/patient/patient.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: "en",
+    }),
 
 
   ],

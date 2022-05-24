@@ -27,7 +27,7 @@ Patients:IUser[]=[]
 
   Edit(id:number)
   {
-
+    this.router.navigateByUrl(`/Edit/${id}`)
   }
   Addappointment(id:number)
   {
