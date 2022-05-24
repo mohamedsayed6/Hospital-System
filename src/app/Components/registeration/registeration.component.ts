@@ -30,10 +30,36 @@ Users:IUser[]=[]
   userForm = this.formBuilder.group({
     name: ['',[Validators.required,Validators.minLength(3)]],
     email: ['',[Validators.email,Validators.required]],
-    password: ['',[Validators.required,Validators.minLength(8)]],
-    confirmPassword: ['',[Validators.required,Validators.minLength(8)]]
+    password: ['',[Validators.required,Validators.minLength(6)]],
+    confirmPassword: ['',[Validators.required]]
 
-  });
+  },
+
+  {
+    validators:this.PasswordMatching('password','confirmPassword')
+  }
+  );
+
+  PasswordMatching(controlName:string,matchingControlName:string,)
+    {
+
+      return(formGroup:FormGroup)=>{
+        const control =formGroup.controls[controlName]
+        const matchingControl =formGroup.controls[matchingControlName];
+
+        if(control.value != matchingControl.value)
+        {
+          matchingControl.setErrors({PasswordMatching:true})
+        }
+
+        else{
+          matchingControl.setErrors(null)
+
+        }
+
+      }
+
+    }
 
   ngOnInit(): void {}
 

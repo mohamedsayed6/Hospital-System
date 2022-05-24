@@ -1,14 +1,60 @@
-{"Header":{
-  "lan":"English",
+{
+
+  "Header":{
+  "lan":"عربي",
   "Dashboard":"Dashboard",
   "Login":"Login",
-  "Logout":"Logout"
+  "Logout":"Logout",
+  "Profile":"Profile"
   },
 
   "Login":{
-    "Email":"Email"
+    "Email":"Email",
+    "Password":"Password",
+    "Login":"Log in",
+    "Register":"Don't have account?"
+  },
+
+  "Registeration":{
+
+    "Name":"Name",
+    "Email":"Email",
+    "Password":"Password",
+    "ConfirmPassword":"Confirm Password",
+    "Register":"Register"
+
+
+  },
+
+
+  "Dashboard":{
+    "PatientName":"Patient Name",
+    "PatientEmail":"Patient Email",
+    "Delete":"Delete",
+    "Edit":"Edit",
+   "addAppointment":"Add New Appointment",
+   "Add":"Add New Patient"
+
+  },
+
+  "Edit":{
+
+   "Name":"New Name",
+   "Password":"New Password",
+   "Email":"New Email",
+   "Update":"Update "
+
+  },
+
+  "Appointment":{
+    "Date":"Select Date",
+    "Add":"Add Appointment "
+  },
+
+  "Profile":{
+    "Appointments": "My Appointments ",
+    "Date":"Date ",
+    "Delete":"Delete "
   }
-
-
 
   }

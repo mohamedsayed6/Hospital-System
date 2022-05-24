@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from 'src/app/Models/iuser';
 
 @Component({
@@ -15,7 +15,8 @@ export class AddappointmentComponent implements OnInit {
   today: Date;
   constructor(
     private formBuilder:FormBuilder,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private route:Router
   )
   {
     this.today =new Date();
@@ -41,6 +42,8 @@ export class AddappointmentComponent implements OnInit {
     this.Users=JSON.parse(localStorage.getItem("Patients")!);
     this.Users.find(u=>u.id==Number(`${this.patientID}`))?.appointments.push(this.today);
     localStorage.setItem("Patients",JSON.stringify(this.Users));
+    this.route.navigateByUrl('/Dashboard')
+
 
   }
 

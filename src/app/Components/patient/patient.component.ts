@@ -15,6 +15,7 @@ export class PatientComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+
     this._activatedRoute.paramMap.subscribe((params) => {
       this.patientID = params.get('pid')!;
     });
@@ -22,10 +23,11 @@ export class PatientComponent implements OnInit {
     this.Users = JSON.parse(localStorage.getItem('Patients')!);
     this.User = this.Users.find((u) => u.id == Number(`${this.patientID}`));
 
+
   }
   Delete(date: Date) {
     if (new Date(date).toDateString() == new Date().toDateString()) {
-      alert('Sorry you are not aloowed to cancel this appointment ');
+      alert('Sorry you are not allowed to cancel this appointment ');
     } else {
       let index: number | undefined = this.Users.find(
         (p) => p.id == Number(`${this.patientID}`)

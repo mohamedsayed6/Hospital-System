@@ -1,24 +1,40 @@
-<div>
-  Your Appointments
+<div class="container-fluid">
+
+
+
+  <div class="d-flex justify-content-center">
+    {{'Profile.Appointments'|translate}}
+  </div>
+  <div class="row">
+  <div class="col-4"></div>
+
+  <div class=" col-4" >
+    <table class="table">
+
+      <thead>
+        <th>{{'Profile.Date'|translate}}</th>
+        <th>{{'Profile.Delete'|translate}}</th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let app of User?.appointments">
+          <td>{{app}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="Delete(app)">  <th>{{'Profile.Delete'|translate}}</th> </button> </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+    </div>
+  <div class="col-3"></div>
+  </div>
+
 </div>
 
-<div class="col-3 ms-5">
-<table class="table">
 
-  <thead>
-    <th>Date</th>
-    <th>Delete</th>
-  </thead>
 
-  <tbody>
-    <tr *ngFor="let app of User?.appointments">
-      <td>{{app}}</td>
-      <td>
-        <button class="btn btn-danger" (click)="Delete(app)"> Delete </button> </td>
 
-    </tr>
-  </tbody>
 
-</table>
 
-</div>

@@ -1,15 +1,14 @@
 
 <div class="col-5 ms-5">
   <form action=""  [formGroup]="date" >
-<label class="form-label" for="appointment">Select Date</label>
+<label class="form-label" for="appointment">{{'Appointment.Date'|translate}}</label>
 <input class="form-control " type="date" name="appointment"
 formControlName="appointment"
-[class.is-valid]="date.get('appointment')?.valid"
-[class.is-invalid]="date.get('appointment')?.invalid"
+
 [ngModel]="today | date:'yyyy-MM-dd'"
 (ngModelChange)="today = $event">
 
-<button type="submit" [disabled]="date.invalid" (click)="addAppointment()" class="btn btn-primary mt-2">Add Appointment</button>
+<button type="submit" [disabled]="date.invalid" (click)="addAppointment()" class="btn btn-primary mt-2">{{'Appointment.Add'|translate}}</button>
 
 </form>
 </div>

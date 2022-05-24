@@ -9,41 +9,47 @@
 
     <form [formGroup]="userForm"  class="form-container">
 
-     <div class="mb-3">
-      <label for="name" class="form-label"> New Name</label>
-      <input type="text" name="name" id="name" class="form-control"
-       formControlName="name"
-       [class.is-valid]="userForm.get('name')?.valid"
-       [class.is-invalid]="userForm.get('name')?.invalid">
-     </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">{{'Edit.Name'|translate}}</label>
+        <input type="text" name="name" id="name" class="form-control"
+         formControlName="name"
+         [class.is-valid]="userForm.get('name')?.valid"
+         >
+         <div [hidden]="userForm.get('name')?.valid || userForm.get('name')?.untouched">
+          <small class="text-danger" *ngIf="userForm.get('name')?.errors?.['required']" >Name is required</small>
+          <small class="text-danger" *ngIf="userForm.get('name')?.errors?.['minlength']" >Name must be at least 3 letters</small>
+        </div>
+       </div>
 
 
-     <div class="mb-3">
-      <label for="email" class="form-label">New Email</label>
-      <input type="text" name="email" id="email" class="form-control"
-       formControlName="email"
-       [class.is-valid]="userForm.get('email')?.valid"
-       [class.is-invalid]="userForm.get('email')?.invalid">
-     </div>
+       <div class="mb-3">
+        <label for="email" class="form-label">{{'Edit.Email'|translate}}</label>
+        <input type="text" name="email" id="email" class="form-control"
+         formControlName="email"
+         [class.is-valid]="userForm.get('email')?.valid"
+        >
 
-     <div class="mb-3">
-      <label for="password" class="form-label">New Password</label>
-      <input type="password" name="password" id="password" class="form-control"
-       formControlName="password"
-       [class.is-valid]="userForm.get('password')?.valid"
-       [class.is-invalid]="userForm.get('password')?.invalid">
-     </div>
+         <div [hidden]="userForm.get('email')?.valid || userForm.get('email')?.untouched">
+          <small class="text-danger" *ngIf="userForm.get('email')?.errors?.['required']" >Email is required</small>
+          <small class="text-danger" *ngIf="userForm.get('email')?.errors?.['email']" >Not valid email</small>
+        </div>
+       </div>
 
-    <!-- <div class="example-container"> -->
+       <div class="mb-3">
+        <label for="password" class="form-label">{{'Edit.Password'|translate}}</label>
+        <input type="password" name="password" id="password" class="form-control"
+         formControlName="password"
+         [class.is-valid]="userForm.get('password')?.valid"
+         >
 
-      <!-- <mat-form-field> -->
-        <!-- <mat-label for="" >asd</mat-label> -->
-        <!-- <input matInput placeholder="Input"> -->
-      <!-- </mat-form-field> -->
+         <div [hidden]="userForm.get('password')?.valid || userForm.get('password')?.untouched">
+          <small class="text-danger" *ngIf="userForm.get('password')?.errors?.['required']" >Password is required</small>
+          <small class="text-danger" *ngIf="userForm.get('password')?.errors?.['minlength']" >Password is too short</small>
+        </div>
+       </div>
 
-    <!-- </div> -->
 
-    <button type="submit" [disabled]="userForm.invalid" (click)="Update(userForm.value)" class="btn btn-primary">Update</button>
+    <button type="submit" [disabled]="userForm.invalid" (click)="Update(userForm.value)" class="btn btn-primary">{{'Edit.Update'|translate}}</button>
 
   </form></div>
   <div class="col-3"></div>

@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private router:Router) {}
   userForm = this.formBuilder.group({
-    email: ['', [Validators.email, Validators.required]],
-    password: ['', [Validators.required, Validators.minLength(8)]],
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
   ngOnInit(): void {}
   Login(user: IUser) {
@@ -29,8 +29,10 @@ export class LoginComponent implements OnInit {
          {
            if(this.Users.find(u=>u.password==user.password))
            {
-            this.router.navigateByUrl(`/Patient/${this.Users.find(u=>u.email==user.email)?.id}`)
             localStorage.setItem("isLogged","logged");
+            localStorage.setItem("userId",JSON.stringify(this.Users.find(u=>u.email==user.email)?.id))
+            this.router.navigateByUrl(`/Patient/${this.Users.find(u=>u.email==user.email)?.id}`)
+
            }
            else
            {

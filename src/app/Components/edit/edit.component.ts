@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
   userForm = this.formBuilder.group({
     name: ['',[Validators.required,Validators.minLength(3)]],
     email: ['',[Validators.email,Validators.required]],
-    password: ['',[Validators.required,Validators.minLength(8)]]})
+    password: ['',[Validators.required,Validators.minLength(6)]]})
 
   ngOnInit(): void {
 

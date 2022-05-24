@@ -1,13 +1,60 @@
-{"Header":{
-"lan":"عربي",
+{
+
+"Header":{
+"lan":"English",
 "Dashboard":"وحدة التجكم",
 "Login":"تسجيل الدخول",
-"Logout":"تسجيل الخروج"
+"Logout":"تسجيل الخروج",
+"Profile":"حسابي"
 },
 
 "Login":{
-  "Email":"البريد الالكتروني"
+  "Email":"البريد الالكتروني",
+  "Password":"كلمة المرور",
+  "Login":"دخول",
+  "Register":"ليس لديك حساب؟"
+},
+
+"Registeration":{
+
+  "Name":"اسم المستخدم",
+  "Email":"البريد الالكتروني",
+  "Password":"كلمة السر",
+  "ConfirmPassword":"تأكيد كلمة السر",
+  "Register":"تسجيل"
+
+
+},
+
+"Dashboard":{
+  "PatientName":"اسم المريض",
+  "PatientEmail":"البريد الالكتروني",
+  "Delete":"حذف",
+  "Edit":"تعديل",
+  "addAppointment":"اضافة موعد جديد",
+  "Add":"اضافة مريض جديد"
+},
+
+"Edit":{
+
+ "Name":"الاسم الجديد",
+ "Password":"كلمة السر الجديدة",
+ "Email":"البريد الالكتروني الجديد",
+ "Update":"تعديل"
+
+},
+
+"Appointment":{
+  "Date":"اختر موعد",
+  "Add":"اضافة الموعد"
+},
+
+"Profile":{
+  "Appointments": "مواعيدي ",
+  "Date":"التاريخ  ",
+  "Delete":"حذف "
 }
+
 
 
 
